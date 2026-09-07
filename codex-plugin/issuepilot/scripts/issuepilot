@@ -1,0 +1,12 @@
+#!/bin/sh
+set -eu
+
+plugin_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+runtime_path="$plugin_root/runtime"
+
+if [ ! -d "$runtime_path/issuepilot" ]; then
+  echo "IssuePilot plugin runtime is missing: $runtime_path/issuepilot" >&2
+  exit 2
+fi
+
+PYTHONPATH="$runtime_path${PYTHONPATH:+:$PYTHONPATH}" exec python3 -m issuepilot.cli "$@"

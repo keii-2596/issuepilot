@@ -1,0 +1,5 @@
+interface:
+  display_name: "IssuePilot"
+  short_description: "发现并安全修复高星开源项目的 GitHub Issue"
+  brand_color: "#172B22"
+  default_prompt: "Use $issuepilot to find a high-quality open-source issue and prepare a safe local fix."
